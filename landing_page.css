@@ -100,6 +100,7 @@ Modal stuff taken from previous assignments, feel free to change/personalize
   .modal-header {
     position: relative;
     padding: 10px 20px;
+    text-align: center;
   }
   
   .modal-header h3 {
@@ -134,9 +135,23 @@ Modal stuff taken from previous assignments, feel free to change/personalize
     flex: 1 75px;
     margin-right: 10px;
   }
+
+    .post-input-element > label {
+    font-weight: 600;
+    flex: 1 75px;
+    margin-right: 10px;
+  }  
   
   .post-input-element input {
     flex: 6 200px;
+    padding: 8px;
+    font-size: 20px;
+    border: 1px solid #aaa;
+  }
+
+  .post-input-element textarea#post-description-input {
+    flex: 6 200px;
+    height: 100px;
     padding: 8px;
     font-size: 20px;
     border: 1px solid #aaa;
