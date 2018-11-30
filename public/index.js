@@ -1,3 +1,6 @@
+
+var body = document.body;
+
 var fs = require('fs');
 var tutorHolder = {
     table: []
