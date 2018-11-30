@@ -3,6 +3,13 @@
     <div class="become-container">
         <button id="become-button" class="action-button">Become a tutor</button>
     </div>
+         <section id='posts'>
+
+        {{#each photos}}
+          {{>postTemplate}}
+        {{/each}}
+
+     </section>
 </div>
 
 <div id="modal-backdrop" class="hidden"></div>

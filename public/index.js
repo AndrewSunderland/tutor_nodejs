@@ -1,4 +1,10 @@
+var fs = require('fs');
+var tutorHolder = {
+    table: []
+};
+
 var body = document.body;
+
 
 
 var modalBackdrop = document.getElementById('modal-backdrop');
@@ -36,15 +42,16 @@ exitButtonModal.addEventListener('click', handleExitClick);
 
 
 //Dynamic tutor adding
+/*
+  tutorHolder.table.push({photoURL: "http://placekitten.com/320/320/",
+  profile: "kitty",
+  price: "5",
+  subject: "Math",
+  name: "John Cena"});
 
-var context = {
-    photoURL: "http://placekitten.com/320/320/",
-    profile: "kitty",
-    price: "5",
-    subject: "Math",
-    condition: "Fair"
-  };
-
+  var json = JSON.stringify(tutorHolder);
+  fs.readFile()
+*/
 var photoContainer = document.getElementById('posts');
 
 function insertNewPost(description, photoURL, price, city, condition) {

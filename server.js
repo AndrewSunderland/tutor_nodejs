@@ -1,6 +1,7 @@
 var path = require('path');
 var express = require('express');
 var exphbs = require('express-handlebars');
+var tutorData = require('./tutorData');
 
 
 var app = express();
@@ -15,7 +16,9 @@ app.use(express.static('public'));
 //not working to render dynamic posts from postData JSON file
 app.get('/',function(req,res){
     console.log("REQUESTED INDEX");
-  res.status(200).render('becomeTutor');
+  res.status(200).render('becomeTutor', {
+      photos: tutorData
+  });
 });
 
 app.get('*', function (req, res) {
