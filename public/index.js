@@ -1,14 +1,8 @@
-
-var body = document.body;
-
-var fs = require('fs');
 var tutorHolder = {
     table: []
 };
 
 var body = document.body;
-
-
 
 var modalBackdrop = document.getElementById('modal-backdrop');
 var sellButton = document.getElementById('become-button');
