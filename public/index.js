@@ -1,6 +1,3 @@
-var tutorHolder = {
-    table: []
-};
 
 var body = document.body;
 
@@ -38,17 +35,9 @@ var exitButtonModal = document.getElementById('modal-close');
 exitButtonModal.addEventListener('click', handleExitClick);
 
 
-//Dynamic tutor adding
-/*
-  tutorHolder.table.push({photoURL: "http://placekitten.com/320/320/",
-  profile: "kitty",
-  price: "5",
-  subject: "Math",
-  name: "John Cena"});
+//Dynamic tutor appending to JSON
 
-  var json = JSON.stringify(tutorHolder);
-  fs.readFile()
-*/
+
 var photoContainer = document.getElementById('posts');
 
 function insertNewPost(description, photoURL, price, city, condition) {
