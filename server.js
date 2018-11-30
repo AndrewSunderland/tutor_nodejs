@@ -23,8 +23,8 @@ app.use(express.static('public'));
 //not working to render dynamic posts from postData JSON file
 app.get('/',function(req,res){
 
-    //**********  This will write/read to JSON */
-    fs.readFile('tutorData.json','utf8',function readFileCallBack(err,data){
+    //**********  This will write/read to JSON %% THIS CODE IS BUGGY %% */ 
+    fs.readFile('tutorData.json','utf8', function readFileCallBack(err,data){
         if(err){
             throw err;
         }else{
@@ -35,6 +35,7 @@ app.get('/',function(req,res){
             "subject": "Science",
             "name": "Richard Dixon"});//pushes this data to the obj
             var json = JSON.stringify(tutorHolder); //converts the obj back to JSON
+
             fs.writeFile('tutorData.json', json, function(err){
                 if (err){
                     return console.log(err);
