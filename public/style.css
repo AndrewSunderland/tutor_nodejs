@@ -240,3 +240,62 @@ Modal stuff taken from previous assignments, feel free to change/personalize
     border-radius: 3px;
     background: #efefef;
   }
+
+  /*
+  About page CSS
+   */
+
+.story-banner {
+  background-color: #ababab;
+  margin-bottom: 8px;
+}
+
+.banner-container {
+  height: 150px;
+  text-align: center;
+  background-color: #ababab;
+  display: inline;
+}
+
+.banner-title {
+  font-size: 50px;
+  padding-top: 50px;
+  margin: 0px;
+}
+
+.banner-title p {
+  margin: 0px;
+  vertical-align: middle;
+}
+
+.banner-subtitle p {
+   margin: 0px;
+}
+
+.banner-subtitle {
+  padding-bottom: 50px;
+  margin: 0px;
+}
+
+.about-content-container {
+  box-sizing: border-box;
+  display: flex;
+  margin: 50px 50px;
+}
+
+.about-content-image {
+  height: 388px;
+  width: 496px;
+}
+
+.about-content-image img {
+  max-height: 100%;
+  max-width: 100%;
+}
+
+.about-content-text {
+  flex-wrap: wrap;
+  max-width: 50%;
+  padding: 10px;
+  margin-left: 50px;
+}
