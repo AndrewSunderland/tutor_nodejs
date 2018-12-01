@@ -314,8 +314,8 @@ Modal stuff taken from previous assignments, feel free to change/personalize
   background-color: #777;
   color: white;
   cursor: pointer;
-  padding: 18px;
-  width: 20%;
+  padding: 10px;
+  width: 188px;
   border: none;
   text-align: left;
   outline: none;
@@ -326,9 +326,10 @@ Modal stuff taken from previous assignments, feel free to change/personalize
   position: fixed;
   top: 17%;
   left: 0;
-  width: 188px;
+  width: 168px;
   padding: 10px;
   display: none;
   overflow: hidden;
-  background-color: firebrick;
+  background-color: #777;
+  border: none;
 }
