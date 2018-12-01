@@ -18,18 +18,18 @@ app.use(express.static('public'));
 
 //not working to render dynamic posts from postData JSON file
 
-<<<<<<< HEAD
+
 app.use(bodyParser.json());
 
-=======
 app.get('/', function (req, res) {
    res.status(200).render('home');
 });
 
-app.get('/tutors',function(req,res){
->>>>>>> ba69d13a4b7f4c8ad45994bbf5c3f810a1e87dd4
+app.get('/about', function (req, res) {
+    res.status(200).render('about');
+ });
 
-app.get('/',function(req,res){
+app.get('/tutors',function(req,res){
 
     console.log("REQUESTED INDEX");
   res.status(200).render('becomeTutor', {
@@ -76,6 +76,6 @@ app.get('*', function (req, res) {
 });
 
 
-app.listen(port, function () {
+app.listen(port, function() {
   console.log("== Server is listening on port", port);
 });

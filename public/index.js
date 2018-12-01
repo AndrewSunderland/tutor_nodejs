@@ -154,9 +154,7 @@ profileInput.addEventListener('change', handleProfile);
 
 var buttonAccept = document.getElementById('modal-accept');
 buttonAccept.addEventListener('click', insertNewPost);
-<<<<<<< HEAD
 buttonAccept.addEventListener('click', storeDatainDB);
-=======
 
 
 //filter button//
@@ -175,4 +173,3 @@ for (i = 0; i < filterButton.length; i++) {
     }
   });
 }
->>>>>>> ba69d13a4b7f4c8ad45994bbf5c3f810a1e87dd4
