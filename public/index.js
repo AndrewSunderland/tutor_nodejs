@@ -74,19 +74,58 @@ function insertNewPost(event) {
       subject: subjectHolder,
       name: nameHolder
     }
-    context.photoURL = photoUrlInput;
-    context.description = profileInput;
-    context.price = priceInput;
-    context.subject = subjectInput;
-    context.name = nameInput;
+
+    context.photoURL = photoUrlInput.value;
+    context.description = profileInput.value;
+    context.price = priceInput.value;
+    context.subject = subjectInput.value;
+    context.name = nameInput.value;
 
 
     var photoCardHTML = Handlebars.templates.postTemplate(context);
     var photoContainer = document.getElementById('posts');
     photoContainer.insertAdjacentHTML('beforeend', photoCardHTML);
+
+    
+
     }else{
         alert("Please enter all of the information");
     }
+  }
+  function storeDatainDB(photoURL, profile, price, subject, name){
+      var request = new XMLHttpRequest();
+      var requestURL = '/';
+      request.open('POST', requestURL);
+
+      var context = {
+        photoURL: photoURL,
+        profile: profile,
+        price: price,
+        subject: subject,
+        name: name
+      }
+      var requestBody = JSON.stringify(context);
+      request.setRequestHeader(
+          'Content-Type', 'application/json'
+      );
+      request.addEventListener('load', function(event){
+        if(event.target.status !== 200){
+            var message = event.target.response;
+            alert("Error ", message);
+        }else{
+            context.photoURL = photoURL.value;
+            context.description = profile.value;
+            context.price = price.value;
+            context.subject = subject.value;
+            context.name = name.value;
+        
+        
+            var photoCardHTML = Handlebars.templates.postTemplate(context);
+            var photoContainer = document.getElementById('posts');
+            photoContainer.insertAdjacentHTML('beforeend', photoCardHTML);
+        }
+      });
+      request.send(requestBody);
   }
 
   
@@ -114,3 +153,4 @@ profileInput.addEventListener('change', handleProfile);
 
 var buttonAccept = document.getElementById('modal-accept');
 buttonAccept.addEventListener('click', insertNewPost);
+buttonAccept.addEventListener('click', storeDatainDB);
