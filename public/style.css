@@ -299,3 +299,36 @@ Modal stuff taken from previous assignments, feel free to change/personalize
   padding: 10px;
   margin-left: 50px;
 }
+
+/*tutors filter button*/
+
+#filter{
+  width: 20%;
+}
+
+.filter-button{
+  
+  position: fixed;
+  top: 10%;
+  left: 0%;
+  background-color: #777;
+  color: white;
+  cursor: pointer;
+  padding: 18px;
+  width: 20%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+}
+
+.filter-content{
+  position: fixed;
+  top: 17%;
+  left: 0;
+  width: 188px;
+  padding: 10px;
+  display: none;
+  overflow: hidden;
+  background-color: firebrick;
+}

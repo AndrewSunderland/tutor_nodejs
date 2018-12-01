@@ -114,3 +114,21 @@ profileInput.addEventListener('change', handleProfile);
 
 var buttonAccept = document.getElementById('modal-accept');
 buttonAccept.addEventListener('click', insertNewPost);
+
+
+//filter button//
+var filterButton = document.getElementsByClassName("filter-button");
+var i;
+
+for (i = 0; i < filterButton.length; i++) {
+  filterButton[i].addEventListener("click", function() {
+    console.log("Clicked Button");
+    this.classList.toggle("active");
+    var content = this.nextElementSibling;
+    if (content.style.display === "block") {
+      content.style.display = "none";
+    } else {
+      content.style.display = "block";
+    }
+  });
+}
