@@ -16,7 +16,11 @@ app.use(express.static('public'));
 
 //not working to render dynamic posts from postData JSON file
 
-app.get('/',function(req,res){
+app.get('/', function (req, res) {
+   res.status(200).render('home');
+});
+
+app.get('/tutors',function(req,res){
 
     //**********  This will write/read to JSON  // 
     fs.readFile('tutorData.json','utf8', function readFileCallBack(err,data){
