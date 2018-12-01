@@ -92,7 +92,7 @@ function insertNewPost(event) {
         alert("Please enter all of the information");
     }
   }
-  function storeDatainDB(photoURL, profile, price, subject, name){
+function storeDatainDB(photoURL, profile, price, subject, name){
       var request = new XMLHttpRequest();
       var requestURL = '/';
       request.open('POST', requestURL);
@@ -111,21 +111,22 @@ function insertNewPost(event) {
       request.addEventListener('load', function(event){
         if(event.target.status !== 200){
             var message = event.target.response;
-            alert("Error ", message);
+            alert("Error " + message);
         }else{
-            context.photoURL = photoURL.value;
-            context.description = profile.value;
-            context.price = price.value;
-            context.subject = subject.value;
-            context.name = name.value;
+            console.log("EVENT LISTENER ACTIVATED");
+            context.photoURL = photoURL;
+            context.description = profile;
+            context.price = price;
+            context.subject = subject;
+            context.name = name;
         
         
             var photoCardHTML = Handlebars.templates.postTemplate(context);
             var photoContainer = document.getElementById('posts');
             photoContainer.insertAdjacentHTML('beforeend', photoCardHTML);
+            request.send(requestBody);
         }
       });
-      request.send(requestBody);
   }
 
   
