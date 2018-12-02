@@ -1,12 +1,10 @@
-<main id="profile-content">
-    <div class="profile-photo-container">
+  <div class="post" data-name= "{{name}}" data-subject= "{{subject}}" data-price="{{price}}" data-phone="{{phone}}" data-profile={{profile}}>
+    <div class="post-contents">
+      <div class="post-image-container">
         <img src={{photoURL}} alt="{{name}}">
+      </div>
+      <div class="post-info-container">
+        <a href="#" class="post-subject">{{subject}}</a> <span class="post-price">${{price}}/hour</span> <span class="post-profile">({{profile}})</span>
+      </div>
     </div>
-    <div class="profile-info-container">
-        <div class="profile-name">Name: {{name}}</div>
-        <div class="profile-subject">Subject: {{subject}}</div>
-        <div class="profile-price">Hourly Rate: ${{price}}</div>
-        <div class="profile-phone">Phone Number: {{phone}}</div>
-        <div class="profile-text">Profile: {{profile}}</div>
-    </div>
-</main>
+  </div>
