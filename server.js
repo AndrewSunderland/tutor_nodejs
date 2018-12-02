@@ -37,7 +37,7 @@ app.get('/tutors',function(req,res){
   });
 });
 
-app.post('/', function (req, res, next){
+app.post('/server', function (req, res, next){
     if(req.body && req.body.photoURL && req.body.description && req.body.price && req.body.subject && req.body.name){
             console.log("-- Client added this info -> ");
             console.log(req.body.photoURL,req.body.description,req.body.price,req.body.subject,req.body.name);

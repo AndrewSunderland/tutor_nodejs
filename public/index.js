@@ -86,49 +86,17 @@ function insertNewPost(event) {
     var photoContainer = document.getElementById('posts');
     photoContainer.insertAdjacentHTML('beforeend', photoCardHTML);
 
+    var xhr = new XMLHttpRequest();
+    xhr.open('POST', '/server');
     
+    xhr.setRequestHeader("Content-Type", 'application/json');
+    var requestBody = JSON.stringify(context);
+    xhr.send(requestBody);
 
     }else{
         alert("Please enter all of the information");
     }
   }
-function storeDatainDB(photoURL, profile, price, subject, name){
-      var request = new XMLHttpRequest();
-      var requestURL = '/';
-      request.open('POST', requestURL);
-
-      var context = {
-        photoURL: photoURL,
-        profile: profile,
-        price: price,
-        subject: subject,
-        name: name
-      }
-      var requestBody = JSON.stringify(context);
-      request.setRequestHeader(
-          'Content-Type', 'application/json'
-      );
-      request.addEventListener('load', function(event){
-        if(event.target.status !== 200){
-            var message = event.target.response;
-            alert("Error " + message);
-        }else{
-            console.log("EVENT LISTENER ACTIVATED");
-            context.photoURL = photoURL;
-            context.description = profile;
-            context.price = price;
-            context.subject = subject;
-            context.name = name;
-        
-        
-            var photoCardHTML = Handlebars.templates.postTemplate(context);
-            var photoContainer = document.getElementById('posts');
-            photoContainer.insertAdjacentHTML('beforeend', photoCardHTML);
-            request.send(requestBody);
-        }
-      });
-  }
-
   
 
   //Input holders for modal inputs
@@ -154,7 +122,6 @@ profileInput.addEventListener('change', handleProfile);
 
 var buttonAccept = document.getElementById('modal-accept');
 buttonAccept.addEventListener('click', insertNewPost);
-buttonAccept.addEventListener('click', storeDatainDB);
 
 
 //filter button//
