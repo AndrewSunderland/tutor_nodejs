@@ -17,13 +17,9 @@ templates['postTemplate'] = template({"compiler":[7,">= 4.0.0"],"main":function(
     + alias4(((helper = (helper = helpers.photoURL || (depth0 != null ? depth0.photoURL : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"photoURL","hash":{},"data":data}) : helper)))
     + " alt=\""
     + alias4(((helper = (helper = helpers.name || (depth0 != null ? depth0.name : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"name","hash":{},"data":data}) : helper)))
-<<<<<<< HEAD
-    + "\">\n      </div>\n      <div class=\"post-info-container\">\n        <a href=\"#\" class=\"post-subject\">"
-=======
     + "\">\n      </div>\n      <div class=\"post-info-container\">\n        <a href=\"/tutors/"
     + alias4(((helper = (helper = helpers.phone || (depth0 != null ? depth0.phone : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"phone","hash":{},"data":data}) : helper)))
     + "\" class=\"post-subject\">"
->>>>>>> 5705c0193e66d3badfcd0c8e4120cae6dbdfacb7
     + alias4(((helper = (helper = helpers.subject || (depth0 != null ? depth0.subject : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"subject","hash":{},"data":data}) : helper)))
     + "</a> <span class=\"post-price\">$"
     + alias4(((helper = (helper = helpers.price || (depth0 != null ? depth0.price : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"price","hash":{},"data":data}) : helper)))
