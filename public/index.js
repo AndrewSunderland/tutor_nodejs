@@ -1,6 +1,8 @@
 
 var body = document.body;
 
+var allPosts = []; //object to keep track of all posts even when filtered out. From assignment-5 code
+
 var profileTextHolder = "";
 function handleProfile(event){
   profileTextHolder = event.target.value;
@@ -82,6 +84,19 @@ function insertNewPost(event) {
     context.name = nameInput.value;
 
 
+    /*code to add created tutor to allPosts*/
+
+    allPosts.push({
+
+      photoURL: photoUrlInput,
+      description: profileInput,
+      price: priceInput,
+      subject: subjectInput,
+      name: nameInput
+    });
+    /**************************************/
+
+
     var photoCardHTML = Handlebars.templates.postTemplate(context);
     var photoContainer = document.getElementById('posts');
     photoContainer.insertAdjacentHTML('beforeend', photoCardHTML);
@@ -94,6 +109,8 @@ function insertNewPost(event) {
     xhr.setRequestHeader("Content-Type", 'application/json');
     var requestBody = JSON.stringify(context);
     xhr.send(requestBody);
+
+
 
     }else{
         alert("Please enter all of the information");
@@ -128,7 +145,6 @@ buttonAccept.addEventListener('click', insertNewPost);
 
 //filter button//
 
-
 var filterButton = document.getElementsByClassName("filter-button");
 
 
@@ -147,6 +163,8 @@ for (var i = 0; i < filterButton.length; i++) {
   });
 }
 
+
+
 function filterTutors(){
   var filterValues = {
     name: document.getElementById('filter-input-name').value,
@@ -164,12 +182,25 @@ function filterTutors(){
 
   var filterName, table, subjectText;
   filterName = name.toUpperCase();
-  table = document.getElementById('posts');
+  table = document.getElementsByClassName('post');
   tableSubject = document.getElementsByClassName("post-subject");
-  for(var i = 0; i < tableSubject.length; i++){
-    console.log("Got here");
-    subjectText = tableSubject[i].innerText;
-    console.log(subjectText);
+  if(filterValues.subject == ""){
+    console.log("Ignore");
+    table[i].style.visibility ='';
+  }
+  else{
+    for(var i = 0; i < tableSubject.length; i++){
+      subjectText = tableSubject[i].innerText;
+      console.log(subjectText);
+      console.log(filterValues.subject);
+      if(subjectText.toUpperCase() != filterValues.subject.toUpperCase()){
+        console.log("Didn't match");
+        //tableSubject[i].style.display = "";
+        table[i].style.visibility = 'hidden';
+        console.log("Got here");
+      }
+
+    }
   }
 
 }
@@ -179,6 +210,9 @@ function clearFilter(){
   document.getElementById('filter-input-subject').value = "";
   document.getElementById('filter-input-min').value = "min";
   document.getElementById('filter-input-max').value = "max";
+  for(var i = 0; i < allPosts.length; i++){
+    console.log(allPosts[i].subject.innerText);
+  }
 }
 
 
@@ -188,4 +222,18 @@ var acceptFilterButton = document.getElementById("accept-filter-button");
 acceptFilterButton.addEventListener('click', filterTutors);
 clearFilterButton.addEventListener('click', clearFilter);
 
-//filter json data//
+
+
+window.addEventListener('DOMContentLoaded', function () {
+  console.log("Filling DOM....");
+  var postElems = document.getElementsByClassName('post');
+  for (var i = 0; i < postElems.length; i++) {
+    allPosts.push({
+      //photoURL: context.photoURL,
+      //description: context.description,
+      //price: context.price,
+      subject: document.getElementsByClassName('post-subject')[i]
+      //name: context.name
+    });
+  }
+});
