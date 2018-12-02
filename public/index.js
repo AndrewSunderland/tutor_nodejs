@@ -146,6 +146,29 @@ for (var i = 0; i < filterButton.length; i++) {
 }
 
 function filterTutors(){
+  var filterValues = {
+    name: document.getElementById('filter-input-name').value,
+    subject: document.getElementById('filter-input-subject').value,
+    min: document.getElementById('filter-input-min').value,
+    max: document.getElementById('filter-input-max').value
+  }
+  /*
+  console.log("Remove posts");
+  var removePosts = document.getElementById('posts');
+  while(removePosts.lastChild){
+    removePosts.removeChild(removePosts.lastChild);
+  }
+  */
+
+  var filterName, table, subjectText;
+  filterName = name.toUpperCase();
+  table = document.getElementById('posts');
+  tableSubject = document.getElementsByClassName("post-subject");
+  for(var i = 0; i < tableSubject.length; i++){
+    console.log("Got here");
+    subjectText = tableSubject[i].innerText;
+    console.log(subjectText);
+  }
 
 }
 
