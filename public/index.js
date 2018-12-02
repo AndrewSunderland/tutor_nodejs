@@ -100,6 +100,8 @@ function insertNewPost(event) {
     var photoCardHTML = Handlebars.templates.postTemplate(context);
     var photoContainer = document.getElementById('posts');
     photoContainer.insertAdjacentHTML('beforeend', photoCardHTML);
+    //add post to DOM since we wont see unless refreshed
+    //once refreshed, won't be in DOM but will be loaded from JSON db
 
     var xhr = new XMLHttpRequest();
     xhr.open('POST', '/server');
