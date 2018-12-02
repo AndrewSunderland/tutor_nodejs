@@ -180,21 +180,15 @@ function filterTutors(){
   }
   console.log("Remove posts");
   var removePosts = document.getElementById('posts');
-<<<<<<< HEAD
 
   console.log(removePosts);
 
-=======
-  var clonePosts = removePosts;
->>>>>>> 7806ff14aaec0e4cf5c35da3bb6f94892cf8506c
   while(removePosts.lastChild){
     removePosts.removeChild(removePosts.lastChild);
   }
 
   for(var i = 0; i < allPosts.length; i++){
-<<<<<<< HEAD
     console.log(allPosts[i].subject.innerText);
-=======
     //console.log(allPosts[i].subject.innerText);
 /*
     if(filterValues.name.innerText != ""){
@@ -204,7 +198,6 @@ function filterTutors(){
       }
     }
 */
->>>>>>> 7806ff14aaec0e4cf5c35da3bb6f94892cf8506c
 
     if(filterValues.subject.innerText){
       if(allPosts[i].subject.contains(filterValues.subject.innerText)){
@@ -214,22 +207,16 @@ function filterTutors(){
       }
     }
 
-<<<<<<< HEAD
     /*if(filterValues.min){
-=======
     if(filterValues.min != ""){
       console.log("Should skip this");
->>>>>>> 7806ff14aaec0e4cf5c35da3bb6f94892cf8506c
       if(allPosts[i].price < filterValues.min){
         continue;
       }
     }
 
-<<<<<<< HEAD
     if(filterValues.max){
-=======
     if(filterValues.max != ""){
->>>>>>> 7806ff14aaec0e4cf5c35da3bb6f94892cf8506c
       if(allPosts[i].price > filterValues.max){
         continue;
       }
@@ -244,17 +231,20 @@ function filterTutors(){
       subject: subjectHolder,
       name: nameHolder
     }
+    console.log(allPosts[i].photoURL);
 
-    //context.photoURL = allPosts[i].photoURL.src;
+    context.photoURL = allPosts[i].photoURL;
     context.profile = allPosts[i].profile;
     context.price = allPosts[i].price;
     context.subject = allPosts[i].subject;
-    //context.name = allPosts[i].name.innerText;
+    context.name = allPosts[i].name;
+    console.log("All posts:", allPosts)
 
     console.log("context.subject",context.subject);
     console.log("allPosts[i].price", allPosts[i].price);
+    var photoCardHTML = Handlebars.templates.postTemplate(context);
     var photoContainer = document.getElementById('posts');
-    photoContainer.insertAdjacentHTML('beforeend', context);
+    photoContainer.insertAdjacentHTML('beforeend', photoCardHTML);
 
   }
 
@@ -308,20 +298,21 @@ clearFilterButton.addEventListener('click', clearFilter);
 window.addEventListener('DOMContentLoaded', function () {
   console.log("Filling DOM....");
   var postElems = document.getElementsByClassName('post');
-  var postImageElem = document.querySelector('.post-image-container img'); //gets the first url
+  var postImageElem = document.getElementsByClassName('post-image-container'); //gets the first url
+  
   //var postImageElem = postElems.getElementsByClassName('post-image-container img src');
   for (var i = 0; i < postElems.length; i++) {
     //var postImageElem = postElems[i].getElementsByClassName('post-image-container img');
 
-    console.log(postImageElem.src);
+    //console.log(postImageElem[i].firstElementChild.src);
     console.log(i);
     allPosts.push({
     //  photoURL: imgElems[i].src,
-      photoURL: document.getElementsByClassName('post-image-container img src')[i],
+      photoURL: postImageElem[i].firstElementChild.src,
       profile: document.getElementsByClassName('post-profile')[i],
       price: document.getElementsByClassName('post-price')[i],
       subject: document.getElementsByClassName('post-subject')[i],
-      name: document.getElementsByClassName('post-image-container img alt')[i]
+      name: postImageElem[i].firstElementChild.alt
     });
   }
 });
