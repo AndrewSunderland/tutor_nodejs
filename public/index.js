@@ -125,12 +125,17 @@ buttonAccept.addEventListener('click', insertNewPost);
 
 
 //filter button//
-var filterButton = document.getElementsByClassName("filter-button");
-var i;
 
-for (i = 0; i < filterButton.length; i++) {
+
+var filterButton = document.getElementsByClassName("filter-button");
+//<script type="text/javascript" src="tutorData.json"></script>
+
+
+for (var i = 0; i < filterButton.length; i++) {
   filterButton[i].addEventListener("click", function() {
     console.log("Clicked Button");
+    
+ 
     this.classList.toggle("active");
     var content = this.nextElementSibling;
     if (content.style.display === "block") {
@@ -140,3 +145,7 @@ for (i = 0; i < filterButton.length; i++) {
     }
   });
 }
+
+//filter json data//
+
+
