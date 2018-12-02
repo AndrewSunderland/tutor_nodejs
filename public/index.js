@@ -88,7 +88,7 @@ function insertNewPost(event) {
 
     var xhr = new XMLHttpRequest();
     xhr.open('POST', '/server');
-    
+
     xhr.setRequestHeader("Content-Type", 'application/json');
     var requestBody = JSON.stringify(context);
     xhr.send(requestBody);
@@ -97,7 +97,7 @@ function insertNewPost(event) {
         alert("Please enter all of the information");
     }
   }
-  
+
 
   //Input holders for modal inputs
 
@@ -128,14 +128,13 @@ buttonAccept.addEventListener('click', insertNewPost);
 
 
 var filterButton = document.getElementsByClassName("filter-button");
-//<script type="text/javascript" src="tutorData.json"></script>
 
 
 for (var i = 0; i < filterButton.length; i++) {
   filterButton[i].addEventListener("click", function() {
     console.log("Clicked Button");
-    
- 
+
+
     this.classList.toggle("active");
     var content = this.nextElementSibling;
     if (content.style.display === "block") {
@@ -146,6 +145,22 @@ for (var i = 0; i < filterButton.length; i++) {
   });
 }
 
+function filterTutors(){
+
+}
+
+function clearFilter(){
+  document.getElementById('filter-input-name').value = "";
+  document.getElementById('filter-input-subject').value = "";
+  document.getElementById('filter-input-min').value = "min";
+  document.getElementById('filter-input-max').value = "max";
+}
+
+
+var clearFilterButton = document.getElementById("clear-filter-button");
+var acceptFilterButton = document.getElementById("accept-filter-button");
+
+acceptFilterButton.addEventListener('click', filterTutors);
+clearFilterButton.addEventListener('click', clearFilter);
+
 //filter json data//
-
-

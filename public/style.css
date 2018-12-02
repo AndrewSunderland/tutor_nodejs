@@ -369,12 +369,43 @@ Home page CSS
   color: white;
 }
 
-#filter-input{
+.price-filter{
   width: 60px;
   align-items: center;
   clear: left;
   display: block;
 }
 #filter-input-name{
-  width: 180px;
+  width: 96%;
+}
+
+#filter-input-subject{      /*ugly duplicate but changed the id name for the clear filter function*/
+  width: 96%
+}
+/*
+#accept-filter-button{
+  border: none;
+  display: inline-block;
+  border-radius: 50%;
+  padding: 10px;
+  align-items: center;
+  border-top: 10px;
+  position: relative;
+}
+*/
+.bottom-filter-button{
+  border: none;
+  color: white;
+  padding: 5px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  color: black;
+}
+
+#clear-filter-button{
+  float: right;
 }
