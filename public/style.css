@@ -339,7 +339,7 @@ Home page CSS
 
   position: fixed;
   top: 10%;
-  left: 0%;
+  left: 1%;
   background-color: #777;
   color: white;
   cursor: pointer;
@@ -354,15 +354,30 @@ Home page CSS
 .filter-content{
   position: fixed;
   top: 17%;
-  left: 0;
+  left: 1%;
   width: 168px;
   padding: 10px;
   display: none;
   overflow: hidden;
   background-color: #777;
   border: none;
-  display:flex;
   align-items: center;
+}
+
+.filter-button:hover{
+
+  position: fixed;
+  top: 10%;
+  left: 1%;
+  background-color: #333;
+  color: white;
+  cursor: pointer;
+  padding: 10px;
+  width: 188px;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
 }
 
 .filter-name-label{

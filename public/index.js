@@ -94,12 +94,13 @@ function insertNewPost(event) {
 
     allPosts.push({
 
-      photoURL: tempPhotoURL,
-      profile: tempDescription,
-      price: tempPrice,
-      subject: tempSubject,
-      name: tempName
+      photoURL: photoUrlInput.value,
+      profile: profileInput.value,
+      price: priceInput.value,
+      subject: subjectInput.value,
+      name: nameInput.value
     });
+    console.log("UPDATED allposts == " , allPosts);
     /**************************************/
 
 
@@ -198,7 +199,7 @@ function filterTutors(){
       }
     }
 */
-
+/*
     if(filterValues.subject.innerText){
       if(allPosts[i].subject.contains(filterValues.subject.innerText)){
           console.log("Should remove post");
@@ -206,7 +207,7 @@ function filterTutors(){
         removePosts.insertAdjacentHTML('beforeend', photoCardHTML);
       }
     }
-
+*/
     /*if(filterValues.min){
     if(filterValues.min != ""){
       console.log("Should skip this");
@@ -224,6 +225,7 @@ function filterTutors(){
     */
     console.log(allPosts[i].subject.innerText);
     console.log(filterValues.subject);
+
     if(allPosts[i].subject.innerText.includes(filterValues.subject)){
 
     console.log("Re-insert");
