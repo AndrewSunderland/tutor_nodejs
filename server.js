@@ -71,6 +71,22 @@ app.post('/server', function (req, res, next){
 
 });
 
+
+//Load the single tutor page by index from tutorData.
+app.get('/tutors/:index', function (req, res, next) {
+    var index = req.params.index.toLowerCase();
+
+    if (tutorData[index]){
+        res.status(200).render('tutorProfile', tutorData[index]);
+        console.log(tutorData[index]);
+    } else {
+        res.status(404);
+        next();
+        console.log('failed to load');
+    }
+
+});
+
 app.get('*', function (req, res) {
   res.status(404);
 });

@@ -71,17 +71,24 @@
 
     </div>
 
-    <div class = "filter-container">
-      <label for="filter-price" class="filter-name-label">Cost</label>
-
-      <input type="number" class = "price-filter" name="filter-min" id="filter-input" placeholder="min">
-      <input type ="number" class = "price-filter" name="filter-max" id = "filter-input" placeholder="max">
-    </div>
 
     <div class = "filter-container">
       <label for="filter-subject" class="filter-name-label">Subject</label>
-      <input type="text" name="filter-subject" id="filter-input-name" placeholder="">
+      <input type="text" name="filter-subject" id="filter-input-subject" placeholder="">
     </div>
+
+
+    <div class = "filter-container">
+      <label for="filter-price" class="filter-name-label">Cost</label>
+
+      <input type="number" class = "price-filter" name="filter-min" id="filter-input-min" placeholder="min">
+      <input type ="number" class = "price-filter" name="filter-max" id = "filter-input-max" placeholder="max">
+    </div>
+
+
+
+    <button class="bottom-filter-button" id="accept-filter-button">Accept</button>
+    <button class="bottom-filter-button" id="clear-filter-button">Clear</button>
   </aside>
 
 
