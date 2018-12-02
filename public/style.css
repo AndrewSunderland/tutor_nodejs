@@ -361,4 +361,20 @@ Home page CSS
   overflow: hidden;
   background-color: #777;
   border: none;
+  display:flex;
+  align-items: center;
+}
+
+.filter-name-label{
+  color: white;
+}
+
+#filter-input{
+  width: 60px;
+  align-items: center;
+  clear: left;
+  display: block;
+}
+#filter-input-name{
+  width: 180px;
 }
