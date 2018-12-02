@@ -222,7 +222,9 @@ function filterTutors(){
       }
     }
     */
-   if(allPosts[i].subject.innerText.contains(filterValues.subject.innerText)){
+    console.log(allPosts[i].subject.innerText);
+    console.log(filterValues.subject);
+    if(allPosts[i].subject.innerText.includes(filterValues.subject)){
 
     console.log("Re-insert");
     var context = {
@@ -233,16 +235,17 @@ function filterTutors(){
       name: nameHolder
     }
     console.log(allPosts[i].photoURL);
+    console.log("Innertext Subject for allpost[i] == ", allPosts[i].subject.innerText);
 
     context.photoURL = allPosts[i].photoURL;
 
     //context.photoURL = allPosts[i].photoURL.src;
     var constString = allPosts[i].price.innerText;
     constString = constString.replace(/\D/g,'');
-    context.profile = allPosts[i].profile;
+    context.profile = allPosts[i].profile.innerText;
     context.price = constString;
-    context.subject = allPosts[i].subject;
-    context.name = allPosts[i].name;
+    context.subject = allPosts[i].subject.innerText;
+    context.name = allPosts[i].name.innerText;
     console.log("All posts:", allPosts)
 
     console.log("context.subject",context.subject);
