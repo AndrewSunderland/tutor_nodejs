@@ -178,37 +178,36 @@ function filterTutors(){
   }
   console.log("Remove posts");
   var removePosts = document.getElementById('posts');
+
+  console.log(removePosts);
+
   while(removePosts.lastChild){
     removePosts.removeChild(removePosts.lastChild);
   }
 
   for(var i = 0; i < allPosts.length; i++){
     console.log(allPosts[i].subject.innerText);
-    /*
-    if(filterValues.name.innerText != ""){
-      if(allPosts[i].name.innerText != filterValues.name){
-        continue;
-      }
-    }
-    */
 
-    if(filterValues.subject.innerText != ""){
-      if(allPosts[i].subject.innerText != filterValues.subject){
-        continue;
+    if(filterValues.subject.innerText){
+      if(allPosts[i].subject.contains(filterValues.subject.innerText)){
+          console.log("Should remove post");
+        var photoCardHTML = Handlebars.templates.postTemplate(allPosts[i]);
+        removePosts.insertAdjacentHTML('beforeend', photoCardHTML);
       }
     }
 
-    if(filterValues.min != "min"){
+    /*if(filterValues.min){
       if(allPosts[i].price < filterValues.min){
         continue;
       }
     }
 
-    if(filterValues.max != "max"){
+    if(filterValues.max){
       if(allPosts[i].price > filterValues.max){
         continue;
       }
     }
+    */
 
     /*ADD POST TO DOM*/
 

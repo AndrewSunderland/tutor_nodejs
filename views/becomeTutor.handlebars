@@ -1,5 +1,6 @@
 <div id="main">
-<div id="first">
+  {{#unless check}}
+  <div id="first">
     <div class="become-container">
         <button id="become-button" class="action-button">Become a tutor</button>
     </div>
@@ -10,10 +11,10 @@
         {{/each}}
 
      </section>
-</div>
+  </div>
 
-<div id="modal-backdrop" class="hidden"></div>
-<div id="become-tutor-modal" class="hidden">
+  <div id="modal-backdrop" class="hidden"></div>
+  <div id="become-tutor-modal" class="hidden">
   <div class="modal-dialog">
 
     <div class="modal-header">
@@ -60,8 +61,8 @@
           </div>
     </div>
 
+    </div>
   </div>
-</div>
 
   <button class="filter-button">Filter tutors </button>
   <aside class="filter-content">
@@ -91,10 +92,13 @@
     <button class="bottom-filter-button" id="clear-filter-button">Clear</button>
   </aside>
 
+  {{/unless}}
+  
 
-
-
-  </div>
-
+  {{#if check}}
+   <section id='posts'>
+    {{>postTemplate photos}}
+    </section>
+  {{/if}}
 
 </div>

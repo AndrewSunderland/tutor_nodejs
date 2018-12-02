@@ -33,7 +33,8 @@ app.get('/tutors',function(req,res){
 
     console.log("REQUESTED INDEX");
   res.status(200).render('becomeTutor', {
-      photos: tutorData
+      photos: tutorData,
+      check: 0
   });
 });
 
@@ -79,15 +80,19 @@ app.get('/tutors/:index', function (req, res, next) {
 
     var indexHolder = 0;
 
-    for(var i = 0; i < Object.keys(tutorData).length; i++){
-        if(Object.keys(tutorData[i]).phone == req.params.index){
+    for(var i = 0; i < tutorData.length; i++){
+        console.log("Index: ",tutorData[i]);
+        if(tutorData[i].phone == index){
             indexHolder = i;
             console.log("OUR MATCHED INDEX IS", i);
         }
     }
 
     if (tutorData[indexHolder]){
-        res.status(200).render('tutorProfile', tutorData[indexHolder]);
+        res.status(200).render('becomeTutor', {
+            photos: tutorData[indexHolder],
+            check: 1
+        });
         console.log(tutorData[indexHolder]);
     } else {
         res.status(404);
