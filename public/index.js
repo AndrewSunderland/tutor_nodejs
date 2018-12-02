@@ -222,6 +222,7 @@ function filterTutors(){
       }
     }
     */
+   if(allPosts[i].subject.innerText.contains(filterValues.subject.innerText)){
 
     console.log("Re-insert");
     var context = {
@@ -232,32 +233,28 @@ function filterTutors(){
       name: nameHolder
     }
     console.log(allPosts[i].photoURL);
-<<<<<<< HEAD
 
     context.photoURL = allPosts[i].photoURL;
-=======
+
     //context.photoURL = allPosts[i].photoURL.src;
     var constString = allPosts[i].price.innerText;
     constString = constString.replace(/\D/g,'');
->>>>>>> 4b36314014ba3e4334a5b50c135dbf9da12086c9
     context.profile = allPosts[i].profile;
     context.price = constString;
     context.subject = allPosts[i].subject;
     context.name = allPosts[i].name;
     console.log("All posts:", allPosts)
 
-<<<<<<< HEAD
     console.log("context.subject",context.subject);
     console.log("allPosts[i].price", allPosts[i].price);
-=======
     console.log("context.subject.innerText",context.subject.innerText);
     console.log("allPosts[i].price.innerText", allPosts[i].price.innerText);
     console.log("allPosts[i].price",allPosts[i].price);
     console.log("allPosts[i].price.value", allPosts[i].price.value);
->>>>>>> 4b36314014ba3e4334a5b50c135dbf9da12086c9
     var photoCardHTML = Handlebars.templates.postTemplate(context);
     var photoContainer = document.getElementById('posts');
     photoContainer.insertAdjacentHTML('beforeend', photoCardHTML);
+}
 
   }
 
