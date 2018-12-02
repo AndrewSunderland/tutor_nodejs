@@ -90,10 +90,12 @@ function insertNewPost(event) {
     var tempPrice = document.getElementById('post-price-input').value.trim();
     var tempSubject = document.getElementById('post-subject-input').value.trim();
     var tempName = document.getElementById('post-text-input').value.trim();
+
+
     allPosts.push({
 
       photoURL: tempPhotoURL,
-      description: tempDescription,
+      profile: tempDescription,
       price: tempPrice,
       subject: tempSubject,
       name: tempName
@@ -178,15 +180,31 @@ function filterTutors(){
   }
   console.log("Remove posts");
   var removePosts = document.getElementById('posts');
+<<<<<<< HEAD
 
   console.log(removePosts);
 
+=======
+  var clonePosts = removePosts;
+>>>>>>> 7806ff14aaec0e4cf5c35da3bb6f94892cf8506c
   while(removePosts.lastChild){
     removePosts.removeChild(removePosts.lastChild);
   }
 
   for(var i = 0; i < allPosts.length; i++){
+<<<<<<< HEAD
     console.log(allPosts[i].subject.innerText);
+=======
+    //console.log(allPosts[i].subject.innerText);
+/*
+    if(filterValues.name.innerText != ""){
+      console.log("SHould skip this");
+      if(allPosts[i].name.innerText != filterValues.name){
+        continue;
+      }
+    }
+*/
+>>>>>>> 7806ff14aaec0e4cf5c35da3bb6f94892cf8506c
 
     if(filterValues.subject.innerText){
       if(allPosts[i].subject.contains(filterValues.subject.innerText)){
@@ -196,23 +214,51 @@ function filterTutors(){
       }
     }
 
+<<<<<<< HEAD
     /*if(filterValues.min){
+=======
+    if(filterValues.min != ""){
+      console.log("Should skip this");
+>>>>>>> 7806ff14aaec0e4cf5c35da3bb6f94892cf8506c
       if(allPosts[i].price < filterValues.min){
         continue;
       }
     }
 
+<<<<<<< HEAD
     if(filterValues.max){
+=======
+    if(filterValues.max != ""){
+>>>>>>> 7806ff14aaec0e4cf5c35da3bb6f94892cf8506c
       if(allPosts[i].price > filterValues.max){
         continue;
       }
     }
     */
 
-    /*ADD POST TO DOM*/
+    console.log("Re-insert");
+    var context = {
+      photoURL: photoUrlHolder,
+      profile: profileTextHolder,
+      price: priceHolder,
+      subject: subjectHolder,
+      name: nameHolder
+    }
+
+    //context.photoURL = allPosts[i].photoURL.src;
+    context.profile = allPosts[i].profile;
+    context.price = allPosts[i].price;
+    context.subject = allPosts[i].subject;
+    //context.name = allPosts[i].name.innerText;
+
+    console.log("context.subject",context.subject);
+    console.log("allPosts[i].price", allPosts[i].price);
+    var photoContainer = document.getElementById('posts');
+    photoContainer.insertAdjacentHTML('beforeend', context);
 
   }
 
+/*
   var filterName, table, subjectText;
   filterName = name.toUpperCase();
   table = document.getElementsByClassName('post');
@@ -234,7 +280,7 @@ function filterTutors(){
 
     }
   }
-
+*/
 }
 
 function clearFilter(){
@@ -242,9 +288,12 @@ function clearFilter(){
   document.getElementById('filter-input-subject').value = "";
   document.getElementById('filter-input-min').value = "min";
   document.getElementById('filter-input-max').value = "max";
+  /*
   for(var i = 0; i < allPosts.length; i++){
     console.log(allPosts[i].subject.innerText);
   }
+  */
+  location.reload();
 }
 
 
@@ -259,13 +308,20 @@ clearFilterButton.addEventListener('click', clearFilter);
 window.addEventListener('DOMContentLoaded', function () {
   console.log("Filling DOM....");
   var postElems = document.getElementsByClassName('post');
+  var postImageElem = document.querySelector('.post-image-container img'); //gets the first url
+  //var postImageElem = postElems.getElementsByClassName('post-image-container img src');
   for (var i = 0; i < postElems.length; i++) {
+    //var postImageElem = postElems[i].getElementsByClassName('post-image-container img');
+
+    console.log(postImageElem.src);
+    console.log(i);
     allPosts.push({
-      //photoURL: context.photoURL,
-      //description: context.description,
-      //price: context.price,
-      subject: document.getElementsByClassName('post-subject')[i]
-      //name: context.name
+    //  photoURL: imgElems[i].src,
+      photoURL: document.getElementsByClassName('post-image-container img src')[i],
+      profile: document.getElementsByClassName('post-profile')[i],
+      price: document.getElementsByClassName('post-price')[i],
+      subject: document.getElementsByClassName('post-subject')[i],
+      name: document.getElementsByClassName('post-image-container img alt')[i]
     });
   }
 });
