@@ -85,14 +85,18 @@ function insertNewPost(event) {
 
 
     /*code to add created tutor to allPosts*/
-
+    var tempPhotoURL = document.getElementById('post-url-input').value.trim();
+    var tempDescription = document.getElementById('post-description-input').value.trim();
+    var tempPrice = document.getElementById('post-price-input').value.trim();
+    var tempSubject = document.getElementById('post-subject-input').value.trim();
+    var tempName = document.getElementById('post-text-input').value.trim();
     allPosts.push({
 
-      photoURL: photoUrlInput,
-      description: profileInput,
-      price: priceInput,
-      subject: subjectInput,
-      name: nameInput
+      photoURL: tempPhotoURL,
+      description: tempDescription,
+      price: tempPrice,
+      subject: tempSubject,
+      name: tempName
     });
     /**************************************/
 
@@ -172,13 +176,43 @@ function filterTutors(){
     min: document.getElementById('filter-input-min').value,
     max: document.getElementById('filter-input-max').value
   }
-  /*
   console.log("Remove posts");
   var removePosts = document.getElementById('posts');
   while(removePosts.lastChild){
     removePosts.removeChild(removePosts.lastChild);
   }
-  */
+
+  for(var i = 0; i < allPosts.length; i++){
+    console.log(allPosts[i].subject.innerText);
+    /*
+    if(filterValues.name.innerText != ""){
+      if(allPosts[i].name.innerText != filterValues.name){
+        continue;
+      }
+    }
+    */
+
+    if(filterValues.subject.innerText != ""){
+      if(allPosts[i].subject.innerText != filterValues.subject){
+        continue;
+      }
+    }
+
+    if(filterValues.min != "min"){
+      if(allPosts[i].price < filterValues.min){
+        continue;
+      }
+    }
+
+    if(filterValues.max != "max"){
+      if(allPosts[i].price > filterValues.max){
+        continue;
+      }
+    }
+
+    /*ADD POST TO DOM*/
+
+  }
 
   var filterName, table, subjectText;
   filterName = name.toUpperCase();
@@ -186,7 +220,6 @@ function filterTutors(){
   tableSubject = document.getElementsByClassName("post-subject");
   if(filterValues.subject == ""){
     console.log("Ignore");
-    table[i].style.visibility ='';
   }
   else{
     for(var i = 0; i < tableSubject.length; i++){
@@ -196,7 +229,7 @@ function filterTutors(){
       if(subjectText.toUpperCase() != filterValues.subject.toUpperCase()){
         console.log("Didn't match");
         //tableSubject[i].style.display = "";
-        table[i].style.visibility = 'hidden';
+      //  table[i].style.visibility = 'hidden';
         console.log("Got here");
       }
 
