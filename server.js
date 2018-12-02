@@ -72,13 +72,23 @@ app.post('/server', function (req, res, next){
 });
 
 
+
 //Load the single tutor page by index from tutorData.
 app.get('/tutors/:index', function (req, res, next) {
-    var index = req.params.index.toLowerCase();
+    var index = req.params.index;
 
-    if (tutorData[index]){
-        res.status(200).render('tutorProfile', tutorData[index]);
-        console.log(tutorData[index]);
+    var indexHolder = 0;
+
+    for(var i = 0; i < Object.keys(tutorData).length; i++){
+        if(Object.keys(tutorData[i]).phone == req.params.index){
+            indexHolder = i;
+            console.log("OUR MATCHED INDEX IS", i);
+        }
+    }
+
+    if (tutorData[indexHolder]){
+        res.status(200).render('tutorProfile', tutorData[indexHolder]);
+        console.log(tutorData[indexHolder]);
     } else {
         res.status(404);
         next();
