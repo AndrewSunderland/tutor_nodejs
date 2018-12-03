@@ -193,39 +193,44 @@ function filterTutors(){
 
   for(var i = 0; i < allPosts.length; i++){
     console.log(allPosts[i].subject.innerText);
-    //console.log(allPosts[i].subject.innerText);
-/*
-    if(filterValues.name.innerText != ""){
-      console.log("SHould skip this");
-      if(allPosts[i].name.innerText != filterValues.name){
-        continue;
+
+    if(filterValues.subject){
+      console.log("Should not get here if subject field is empty");
+      if(allPosts[i].subject.innerText.includes(filterValues.subject)){
+          console.log("Should add post");
       }
-    }
-*/
-/*
-    if(filterValues.subject.innerText){
-      if(allPosts[i].subject.contains(filterValues.subject.innerText)){
-          console.log("Should remove post");
-        var photoCardHTML = Handlebars.templates.postTemplate(allPosts[i]);
-        removePosts.insertAdjacentHTML('beforeend', photoCardHTML);
-      }
-    }
-*/
-    /*if(filterValues.min){
-    if(filterValues.min != ""){
-      console.log("Should skip this");
-      if(allPosts[i].price < filterValues.min){
+      else{
+        console.log("Subject did not match");
         continue;
       }
     }
 
+    if(filterValues.min){
+      var minString = allPosts[i].price.innerText;
+      minString = minString.replace(/\D/g,'');
+      console.log("MINVALUE: ", minString)
+      if(+minString < +filterValues.min){
+          continue;
+      }
+    }
+
     if(filterValues.max){
-    if(filterValues.max != ""){
-      if(allPosts[i].price > filterValues.max){
+      var maxString = allPosts[i].price.innerText;
+      maxString = maxString.replace(/\D/g,'');
+      console.log("MAXVALUE: ", maxString);
+      console.log("Is ",maxString);
+      console.log("greater than ", filterValues.max);
+      if(+maxString > +filterValues.max){
+        console.log("SHould not read this post");
         continue;
       }
     }
-    */
+
+
+
+
+
+    /*REinsert post*/
     console.log(allPosts[i].subject.innerText);
     console.log(filterValues.subject);
     if(allPosts[i].subject.innerText.includes(filterValues.subject)){
@@ -318,7 +323,7 @@ window.addEventListener('DOMContentLoaded', function () {
   console.log("Filling DOM....");
   var postElems = document.getElementsByClassName('post');
   var postImageElem = document.getElementsByClassName('post-image-container'); //gets the first url
-  
+
   //var postImageElem = postElems.getElementsByClassName('post-image-container img src');
   for (var i = 0; i < postElems.length; i++) {
     //var postImageElem = postElems[i].getElementsByClassName('post-image-container img');
