@@ -96,7 +96,7 @@ app.get('/tutors/:index', function (req, res, next) {
             photos: tutorData[indexHolder],
             check: 1
         });
-        console.log(tutorData[indexHolder]);
+
     } else {
         res.status(404);
         next();
