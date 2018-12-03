@@ -242,7 +242,7 @@ function filterTutors(){
       price: priceHolder,
       subject: subjectHolder,
       name: nameHolder,
-      phone: phone
+      phone: phoneHolder
     }
     console.log(allPosts[i].photoURL);
     console.log("Innertext Subject for allpost[i] == ", allPosts[i].subject.innerText);
@@ -255,8 +255,9 @@ function filterTutors(){
     context.profile = allPosts[i].profile.innerText;
     context.price = constString;
     context.subject = allPosts[i].subject.innerText;
-    context.name = allPosts[i].name.innerText;
     context.phone = allPosts[i].phone.innerText;
+    context.name = allPosts[i].name.innerText;
+
     console.log("All posts:", allPosts)
 
     console.log("context.subject",context.subject);
@@ -336,7 +337,8 @@ window.addEventListener('DOMContentLoaded', function () {
       profile: document.getElementsByClassName('post-profile')[i],
       price: document.getElementsByClassName('post-price')[i],
       subject: document.getElementsByClassName('post-subject')[i],
-      name: postImageElem[i].firstElementChild.alt
+      name: postImageElem[i].firstElementChild.alt,
+      phone: document.getElementsByClassName('post')[i].getAttribute('data-phone')
     });
   }
 });
