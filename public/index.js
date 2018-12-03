@@ -68,13 +68,14 @@ exitButtonModal.addEventListener('click', handleExitClick);
 var photoContainer = document.getElementById('posts');
 
 function insertNewPost(event) {
-    if(photoUrlInput && profileInput && priceInput && subjectInput && nameInput){
+    if(photoUrlInput && profileInput && priceInput && subjectInput && nameInput && phoneInput){
     var context = {
       photoURL: photoUrlHolder,
       profile: profileTextHolder,
       price: priceHolder,
       subject: subjectHolder,
-      name: nameHolder
+      name: nameHolder,
+      phone: phoneHolder
     }
 
     context.photoURL = photoUrlInput.value;
@@ -82,6 +83,7 @@ function insertNewPost(event) {
     context.price = priceInput.value;
     context.subject = subjectInput.value;
     context.name = nameInput.value;
+    context.phone = phoneInput.value;
 
 
     /*code to add created tutor to allPosts*/
@@ -98,7 +100,8 @@ function insertNewPost(event) {
       profile: profileInput.value,
       price: priceInput.value,
       subject: subjectInput.value,
-      name: nameInput.value
+      name: nameInput.value,
+      phone: phoneInput.value
     });
     console.log("UPDATED allposts == " , allPosts);
     /**************************************/
@@ -225,7 +228,6 @@ function filterTutors(){
     */
     console.log(allPosts[i].subject.innerText);
     console.log(filterValues.subject);
-
     if(allPosts[i].subject.innerText.includes(filterValues.subject)){
 
     console.log("Re-insert");
@@ -234,7 +236,8 @@ function filterTutors(){
       profile: profileTextHolder,
       price: priceHolder,
       subject: subjectHolder,
-      name: nameHolder
+      name: nameHolder,
+      phone: phone
     }
     console.log(allPosts[i].photoURL);
     console.log("Innertext Subject for allpost[i] == ", allPosts[i].subject.innerText);
@@ -248,6 +251,7 @@ function filterTutors(){
     context.price = constString;
     context.subject = allPosts[i].subject.innerText;
     context.name = allPosts[i].name.innerText;
+    context.phone = allPosts[i].phone.innerText;
     console.log("All posts:", allPosts)
 
     console.log("context.subject",context.subject);

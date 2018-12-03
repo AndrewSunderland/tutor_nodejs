@@ -54,7 +54,8 @@ app.post('/server', function (req, res, next){
                 profile: req.body.description,
                 price: req.body.price,
                 subject: req.body.subject,
-                name: req.body.name});//pushes this data to the obj
+                name: req.body.name,
+                phone: req.body.phone});//pushes this data to the obj
                 var json = JSON.stringify(tutorData); //converts the obj back to JSON
     
                 fs.writeFile('tutorData.json', json, function(err){
@@ -79,6 +80,8 @@ app.get('/tutors/:index', function (req, res, next) {
     var index = req.params.index;
 
     var indexHolder = 0;
+
+
 
     for(var i = 0; i < tutorData.length; i++){
         console.log("Index: ",tutorData[i]);

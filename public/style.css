@@ -242,6 +242,13 @@ Modal stuff taken from previous assignments, feel free to change/personalize
     border-radius: 3px;
     background: #efefef;
   }
+  .post-profile{
+    display: inline-block;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    max-width: 300px;
+  }
 
   /*
   About page CSS
