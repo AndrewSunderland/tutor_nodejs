@@ -192,13 +192,22 @@ function filterTutors(){
   }
 
   for(var i = 0; i < allPosts.length; i++){
-    console.log(allPosts[i].subject.innerText.toUpperCase());
-    console.log("compared to ", filterValues.subject.toUpperCase());
+    console.log(allPosts[i].name.toUpperCase());
+    console.log("compared to ", filterValues.name.toUpperCase());
+
+    if(filterValues.name){
+      if(allPosts[i].name.toUpperCase().includes(filterValues.name.toUpperCase())){
+        console.log("Should be hitting this on testing name");
+      }
+
+      else{
+        continue;
+      }
+    }
 
     if(filterValues.subject){
       console.log("Should not get here if subject field is empty");
       if(allPosts[i].subject.innerText.toUpperCase().includes(filterValues.subject.toUpperCase())){
-        console.log("should be hitting this on testing");
       }
       else{
         continue;
@@ -268,29 +277,6 @@ function filterTutors(){
   //}
   }
 
-/*
-  var filterName, table, subjectText;
-  filterName = name.toUpperCase();
-  table = document.getElementsByClassName('post');
-  tableSubject = document.getElementsByClassName("post-subject");
-  if(filterValues.subject == ""){
-    console.log("Ignore");
-  }
-  else{
-    for(var i = 0; i < tableSubject.length; i++){
-      subjectText = tableSubject[i].innerText;
-      console.log(subjectText);
-      console.log(filterValues.subject);
-      if(subjectText.toUpperCase() != filterValues.subject.toUpperCase()){
-        console.log("Didn't match");
-        //tableSubject[i].style.display = "";
-      //  table[i].style.visibility = 'hidden';
-        console.log("Got here");
-      }
-
-    }
-  }
-*/
 }
 
 function clearFilter(){
@@ -298,11 +284,7 @@ function clearFilter(){
   document.getElementById('filter-input-subject').value = "";
   document.getElementById('filter-input-min').value = "min";
   document.getElementById('filter-input-max').value = "max";
-  /*
-  for(var i = 0; i < allPosts.length; i++){
-    console.log(allPosts[i].subject.innerText);
-  }
-  */
+
   location.reload();
 }
 
