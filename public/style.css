@@ -390,15 +390,24 @@ Home page CSS
 
 }
 */
+
+.single-tutor-post{
+  display: inline-flex;
+}
+
+#single-tutor-img img{
+  max-height: 300px;
+  max-width: 300px;
+}
 #single-tutor-price{
 
   display: block;
   width: 15%;
-  border: none;
   background-color: transparent;
   font-size: 16px;
   padding: 5px;
   margin: 0px;
+  border: none;
 }
 
 .single-tutor-info-container{
@@ -411,6 +420,8 @@ Home page CSS
   padding-bottom: 10px;
   border: 5px solid #d73f09;
   border-radius: 16px;
+  height: 33%;
+  background-color: #FEE0C6;
 }
 
 /*tutors filter button*/
