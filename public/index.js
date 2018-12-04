@@ -192,15 +192,15 @@ function filterTutors(){
   }
 
   for(var i = 0; i < allPosts.length; i++){
-    console.log(allPosts[i].subject.innerText);
+    console.log(allPosts[i].subject.innerText.toUpperCase());
+    console.log("compared to ", filterValues.subject.toUpperCase());
 
     if(filterValues.subject){
       console.log("Should not get here if subject field is empty");
-      if(allPosts[i].subject.innerText.includes(filterValues.subject)){
-          console.log("Should add post");
+      if(allPosts[i].subject.innerText.toUpperCase().includes(filterValues.subject.toUpperCase())){
+        console.log("should be hitting this on testing");
       }
       else{
-        console.log("Subject did not match");
         continue;
       }
     }
@@ -217,11 +217,8 @@ function filterTutors(){
     if(filterValues.max){
       var maxString = allPosts[i].price.innerText;
       maxString = maxString.replace(/\D/g,'');
-      console.log("MAXVALUE: ", maxString);
-      console.log("Is ",maxString);
-      console.log("greater than ", filterValues.max);
+
       if(+maxString > +filterValues.max){
-        console.log("SHould not read this post");
         continue;
       }
     }
@@ -231,9 +228,7 @@ function filterTutors(){
 
 
     /*REinsert post*/
-    console.log(allPosts[i].subject.innerText);
-    console.log(filterValues.subject);
-    if(allPosts[i].subject.innerText.includes(filterValues.subject)){
+    //if(allPosts[i].subject.innerText.includes(filterValues.subject)){
 
     console.log("Re-insert");
     var context = {
@@ -269,8 +264,8 @@ function filterTutors(){
     var photoCardHTML = Handlebars.templates.postTemplate(context);
     var photoContainer = document.getElementById('posts');
     photoContainer.insertAdjacentHTML('beforeend', photoCardHTML);
-}
 
+  //}
   }
 
 /*
