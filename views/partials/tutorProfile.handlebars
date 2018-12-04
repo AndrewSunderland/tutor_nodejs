@@ -4,17 +4,19 @@
         <img src={{photoURL}} alt="{{name}}">
       </div>
       <div class="post-info-container">
-        <span class="post-subject">{{subject}}</span>
-         <span class="post-price">${{price}}/hour</span>
-         <div>
-         </div>
-          <span class="post-phone">Phone Number: {{phone}}</span>
+        <aside class="single-tutor-info-container">
+          <span class="post-subject" id="single-tutor-subject">{{subject}}</span>
+          <span class="post-price" id="single-tutor-price">${{price}}/hour</span>
           <div>
           </div>
-          <span class="post-profileV2">Description of {{name}}:</span>
-          <div>
-          </div>
-          <span class="post-profileV2">{{profile}}</span>
+            <span class="post-phone">Phone Number: {{phone}}</span>
+            <div>
+            </div>
+            <span class="post-profileV2" id="single-tutor-description-of">Description of {{name}}:</span>
+            <div>
+            </div>
+            <span class="post-profileV2" id="single-tutor-profile">{{profile}}</span>
+          </aside>
       </div>
     </div>
   </div>
