@@ -1,8 +1,8 @@
 body {
-  background-color: lightgrey;
+  background-color: white;
   background-repeat: no-repeat;
   background-size: cover;
-  font-family: Arial;
+  font-family: "Open+Sans",sans-serif;
 }
 
 
@@ -17,22 +17,23 @@ height: 768px;  /*using my own screen resolution for now because using width/hei
 
 
 .topbar {
-    background-color: #333;
+    background-color: #d73f09;
     overflow: hidden;
-    font-family: Arial;
+    font-family: "Open+Sans",sans-serif;
 }
 
 .topbar a {
     float: left;
-    color: #f2f2f2;
+    color: #252525;
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
     font-size: 17px;
+    font-weight: bold;
 }
 .topbar a:hover {
-    background-color: lightgrey;
-    color: black;
+    background-color: #252525;
+    color: white;
 }
 
 
@@ -211,7 +212,7 @@ Modal stuff taken from previous assignments, feel free to change/personalize
     width: 300px;
     margin: 10px;
     padding: 10px;
-    border: 1px solid #dadada;
+    border: 2px solid #252525;
     border-radius: 3px;
   }
 
@@ -314,28 +315,33 @@ Home page CSS
  */
 
 .home-banner {
-  background-color: #ababab;
+  background-color: #252525;
   margin-bottom: 8px;
-  font-family: Arial;
+  font-family: "Open+Sans",sans-serif;
 }
 
 #home-content {
   display: flex;
   align-content: center;
-  font-family: Arial;
+  font-family: "Open+Sans",sans-serif;
+
+}
+
+.banner-title {
+    color: white;
+}
+
+.banner-subtitle {
+    color: white;
 }
 
 .recent-tutors {
   max-width: 50%;
   margin: auto;
   font-family: inherit;
+    color: black;
 }
 
-.top-tutors {
-  max-width: 50%;
-  margin: auto;
-  font-family: inherit;
-}
 /*tutors filter button*/
 
 #filter{
