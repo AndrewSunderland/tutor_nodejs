@@ -461,8 +461,13 @@ Home page CSS
 
   position: fixed;
   top: 10%;
+<<<<<<< HEAD
+  left: .5%;
+  background-color: #777;
+=======
   left: 0;
   background-color: #d73f09;
+>>>>>>> 441fa12336c1d4c35ed3ed7fff2eedcfad3b9e87
   color: white;
   cursor: pointer;
   padding: 10px;
@@ -477,7 +482,7 @@ Home page CSS
 .filter-content{
   position: fixed;
   top: 17%;
-  left: 0;
+  left: .5%;
   width: 168px;
   padding: 10px;
   display: none;
@@ -491,7 +496,7 @@ Home page CSS
 
   position: fixed;
   top: 10%;
-  left: 1%;
+  left: .5%;
   background-color: #333;
   color: white;
   cursor: pointer;
