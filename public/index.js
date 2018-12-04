@@ -45,12 +45,24 @@ sellButton.addEventListener('click', handleBecomeClick);
 //for cancel/exit on modal
 function handleCancel(event){
     console.log("Clicked cancel")
+    photoUrlInput.value = "";
+    profileInput.value = "";
+    priceInput.value = "";
+    subjectInput.value = "";
+    nameInput.value = "";
+    phoneInput.value = "";
     modalBackdrop.style.display = "none";
     modalPage.style.display = "none";
 }
 
 function handleExitClick(event){
     console.log("Clicked exit");
+    photoUrlInput.value = "";
+    profileInput.value = "";
+    priceInput.value = "";
+    subjectInput.value = "";
+    nameInput.value = "";
+    phoneInput.value = "";
     modalBackdrop.style.display = "none";
     modalPage.style.display = "none";
 }
@@ -119,7 +131,7 @@ function insertNewPost(event) {
     xhr.setRequestHeader("Content-Type", 'application/json');
     var requestBody = JSON.stringify(context);
     xhr.send(requestBody);
-
+    handleExitClick();
 
 
     }else{
