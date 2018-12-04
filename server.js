@@ -25,8 +25,8 @@ app.get('/', function (req, res) {
     var tutorArray = tutorData.slice();
     tutorArray.reverse();
 
-    if (tutorArray.length >= 5){
-        var tutorArrNew = tutorArray.slice(0, 5);
+    if (tutorArray.length >= 4){
+        var tutorArrNew = tutorArray.slice(0, 4);
 
         res.status(200).render('home', {
             post: tutorArrNew,
