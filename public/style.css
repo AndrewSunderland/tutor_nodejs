@@ -418,6 +418,7 @@ Home page CSS
 #single-tutor-post{
   position: fixed;
   left: 0px;
+  top: 8%;
 
 }
 #single-tutor-img img{
@@ -440,7 +441,7 @@ Home page CSS
   display: block;
   content: "";
   position: fixed;
-  top: 55%;
+  top: 61%;
   padding: 5px;
   padding-bottom: 10px;
   border: 5px solid #d73f09;
