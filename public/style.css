@@ -8,6 +8,8 @@ body {
 
 #main{
 position:relative;
+margin: 25px;
+left: 100px;
 }
 div#first{
 text-align: center;
@@ -204,14 +206,18 @@ Modal stuff taken from previous assignments, feel free to change/personalize
   /*
   Tutor photocard CSS
   */
-
+ 
   .post {
+    left: 100px;
+    background-color: #FEE0C6;
     display: inline-block;
     vertical-align: top;
     height: 300px;
     width: 300px;
     margin: 10px;
     padding: 10px;
+    border: 1px solid #a15858;
+    
     border: 2px solid #252525;
     border-radius: 3px;
   }
@@ -227,6 +233,8 @@ Modal stuff taken from previous assignments, feel free to change/personalize
   .post-image-container img {
     max-height: 240px;
     max-width: 300px;
+    border: 1px solid black;
+    
   }
 
   .post-info-container {
@@ -349,18 +357,98 @@ Home page CSS
   align-items: center;
   max-width: 100%;
 }
+/*single profile page description so we can hide overflow on main page*/
+.post-profileV2{
+ 
+  left: 300px;
+  width: 42%;
+ 
+}
+
+
+
+#single-tutor-profile{
+  position: fixed;
+  left: 400px;
+  top: 100px;
+  display: inline-block;
+  width: 66%;
+  overflow-wrap: break-word;
+}
+
+#single-tutor-description-of{
+  position: fixed;
+  left: 50%;
+  top: 60px;
+  text-decoration: underline;
+  font-weight: bold;
+  font-size: 16pt;
+  display: inline-block;
+  overflow-wrap: break-word;
+}
+/*
+#single-tutor-subject{
+  position: fixed;
+  top: 55%;
+  padding: 5px;
+  border: 5px solid #d73f09;
+  border-radius: 16px;
+
+}
+*/
+
+.single-tutor-post{
+  display: inline-flex;
+}
+
+
+
+#single-tutor-post{
+  position: fixed;
+  left: 0px;
+}
+#single-tutor-img img{
+  max-height: 300px;
+  max-width: 300px;
+}
+#single-tutor-price{
+
+  display: block;
+  width: 15%;
+  background-color: transparent;
+  font-size: 16px;
+  padding: 5px;
+  margin: 0px;
+  border: none;
+}
+
+.single-tutor-info-container{
+  font-size: 16px;
+  display: block;
+  content: "";
+  position: fixed;
+  top: 55%;
+  padding: 5px;
+  padding-bottom: 10px;
+  border: 5px solid #d73f09;
+  border-radius: 16px;
+  height: 33%;
+  background-color: #FEE0C6;
+  left: 0px;
+}
 
 /*tutors filter button*/
 
 #filter{
   width: 20%;
+  margin: 20px;
 }
 
 .filter-button{
 
   position: fixed;
   top: 10%;
-  left: 1%;
+  left: 0;
   background-color: #777;
   color: white;
   cursor: pointer;
@@ -375,7 +463,7 @@ Home page CSS
 .filter-content{
   position: fixed;
   top: 17%;
-  left: 1%;
+  left: 0;
   width: 168px;
   padding: 10px;
   display: none;

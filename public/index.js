@@ -45,12 +45,24 @@ sellButton.addEventListener('click', handleBecomeClick);
 //for cancel/exit on modal
 function handleCancel(event){
     console.log("Clicked cancel")
+    photoUrlInput.value = "";
+    profileInput.value = "";
+    priceInput.value = "";
+    subjectInput.value = "";
+    nameInput.value = "";
+    phoneInput.value = "";
     modalBackdrop.style.display = "none";
     modalPage.style.display = "none";
 }
 
 function handleExitClick(event){
     console.log("Clicked exit");
+    photoUrlInput.value = "";
+    profileInput.value = "";
+    priceInput.value = "";
+    subjectInput.value = "";
+    nameInput.value = "";
+    phoneInput.value = "";
     modalBackdrop.style.display = "none";
     modalPage.style.display = "none";
 }
@@ -119,7 +131,7 @@ function insertNewPost(event) {
     xhr.setRequestHeader("Content-Type", 'application/json');
     var requestBody = JSON.stringify(context);
     xhr.send(requestBody);
-
+    handleExitClick();
 
 
     }else{
@@ -192,15 +204,24 @@ function filterTutors(){
   }
 
   for(var i = 0; i < allPosts.length; i++){
-    console.log(allPosts[i].subject.innerText);
+    console.log(allPosts[i].name.toUpperCase());
+    console.log("compared to ", filterValues.name.toUpperCase());
+
+    if(filterValues.name){
+      if(allPosts[i].name.toUpperCase().includes(filterValues.name.toUpperCase())){
+        console.log("Should be hitting this on testing name");
+      }
+
+      else{
+        continue;
+      }
+    }
 
     if(filterValues.subject){
       console.log("Should not get here if subject field is empty");
-      if(allPosts[i].subject.innerText.includes(filterValues.subject)){
-          console.log("Should add post");
+      if(allPosts[i].subject.innerText.toUpperCase().includes(filterValues.subject.toUpperCase())){
       }
       else{
-        console.log("Subject did not match");
         continue;
       }
     }
@@ -217,11 +238,8 @@ function filterTutors(){
     if(filterValues.max){
       var maxString = allPosts[i].price.innerText;
       maxString = maxString.replace(/\D/g,'');
-      console.log("MAXVALUE: ", maxString);
-      console.log("Is ",maxString);
-      console.log("greater than ", filterValues.max);
+
       if(+maxString > +filterValues.max){
-        console.log("SHould not read this post");
         continue;
       }
     }
@@ -231,9 +249,7 @@ function filterTutors(){
 
 
     /*REinsert post*/
-    console.log(allPosts[i].subject.innerText);
-    console.log(filterValues.subject);
-    if(allPosts[i].subject.innerText.includes(filterValues.subject)){
+    //if(allPosts[i].subject.innerText.includes(filterValues.subject)){
 
     console.log("Re-insert");
     var context = {
@@ -269,33 +285,10 @@ function filterTutors(){
     var photoCardHTML = Handlebars.templates.postTemplate(context);
     var photoContainer = document.getElementById('posts');
     photoContainer.insertAdjacentHTML('beforeend', photoCardHTML);
-}
 
+  //}
   }
 
-/*
-  var filterName, table, subjectText;
-  filterName = name.toUpperCase();
-  table = document.getElementsByClassName('post');
-  tableSubject = document.getElementsByClassName("post-subject");
-  if(filterValues.subject == ""){
-    console.log("Ignore");
-  }
-  else{
-    for(var i = 0; i < tableSubject.length; i++){
-      subjectText = tableSubject[i].innerText;
-      console.log(subjectText);
-      console.log(filterValues.subject);
-      if(subjectText.toUpperCase() != filterValues.subject.toUpperCase()){
-        console.log("Didn't match");
-        //tableSubject[i].style.display = "";
-      //  table[i].style.visibility = 'hidden';
-        console.log("Got here");
-      }
-
-    }
-  }
-*/
 }
 
 function clearFilter(){
@@ -303,11 +296,7 @@ function clearFilter(){
   document.getElementById('filter-input-subject').value = "";
   document.getElementById('filter-input-min').value = "min";
   document.getElementById('filter-input-max').value = "max";
-  /*
-  for(var i = 0; i < allPosts.length; i++){
-    console.log(allPosts[i].subject.innerText);
-  }
-  */
+
   location.reload();
 }
 
