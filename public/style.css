@@ -8,6 +8,7 @@ body {
 
 #main{
 position:relative;
+margin: 25px;
 }
 div#first{
 text-align: center;
@@ -211,7 +212,8 @@ Modal stuff taken from previous assignments, feel free to change/personalize
     width: 300px;
     margin: 10px;
     padding: 10px;
-    border: 1px solid #dadada;
+    border: 1px solid #a15858;
+    
     border-radius: 3px;
   }
 
@@ -226,6 +228,7 @@ Modal stuff taken from previous assignments, feel free to change/personalize
   .post-image-container img {
     max-height: 240px;
     max-width: 300px;
+    
   }
 
   .post-info-container {
@@ -336,17 +339,24 @@ Home page CSS
   margin: auto;
   font-family: inherit;
 }
+/*single profile page description so we can hide overflow on main page*/
+.post-profileV2{
+
+  margin-left: 50px;
+  float: left;
+}
 /*tutors filter button*/
 
 #filter{
   width: 20%;
+  margin: 20px;
 }
 
 .filter-button{
 
   position: fixed;
   top: 10%;
-  left: 1%;
+  left: 0;
   background-color: #777;
   color: white;
   cursor: pointer;
@@ -361,7 +371,7 @@ Home page CSS
 .filter-content{
   position: fixed;
   top: 17%;
-  left: 1%;
+  left: 0;
   width: 168px;
   padding: 10px;
   display: none;
