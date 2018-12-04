@@ -209,6 +209,7 @@ Modal stuff taken from previous assignments, feel free to change/personalize
  
   .post {
     left: 100px;
+    background-color: #FEE0C6;
     display: inline-block;
     vertical-align: top;
     height: 300px;
@@ -232,6 +233,7 @@ Modal stuff taken from previous assignments, feel free to change/personalize
   .post-image-container img {
     max-height: 240px;
     max-width: 300px;
+    border: 1px solid black;
     
   }
 
