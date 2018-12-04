@@ -43,7 +43,7 @@ button#become-button.action-button{
     font-size: 20px;
     color: white;
     padding: 12px;
-    background-color: cornflowerblue;
+    background-color: #d73f09;
     border: 1px solid #ababab;
     border-radius: 5px;
     font-weight: lighter;
@@ -55,7 +55,7 @@ button#become-button.action-button:hover{
     font-size: 21px;
     color: white;
     padding: 12px;
-    background-color: lightsteelblue;
+    background-color: #252525;
     border: 1px solid #ababab;
     border-radius: 5px;
     font-weight: lighter;
@@ -264,7 +264,7 @@ Modal stuff taken from previous assignments, feel free to change/personalize
    */
 
 .story-banner {
-  background-color: #ababab;
+  background-color: #252525;
   margin-bottom: 8px;
 }
 
@@ -309,6 +309,7 @@ Modal stuff taken from previous assignments, feel free to change/personalize
 .about-content-image img {
   max-height: 100%;
   max-width: 100%;
+  padding-top: 25px;
 }
 
 .about-content-text {
@@ -316,6 +317,13 @@ Modal stuff taken from previous assignments, feel free to change/personalize
   max-width: 50%;
   padding: 10px;
   margin-left: 50px;
+  font-weight: bold;
+}
+
+
+#about-content {
+  background-color: #d73f09;
+
 }
 
 /*
@@ -449,7 +457,7 @@ Home page CSS
   position: fixed;
   top: 10%;
   left: 0;
-  background-color: #777;
+  background-color: #d73f09;
   color: white;
   cursor: pointer;
   padding: 10px;
@@ -458,6 +466,7 @@ Home page CSS
   text-align: left;
   outline: none;
   font-size: 15px;
+  font-weight: bold;
 }
 
 .filter-content{
@@ -468,7 +477,7 @@ Home page CSS
   padding: 10px;
   display: none;
   overflow: hidden;
-  background-color: #777;
+  background-color: #252525;
   border: none;
   align-items: center;
 }
