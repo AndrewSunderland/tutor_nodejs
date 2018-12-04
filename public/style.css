@@ -9,6 +9,7 @@ body {
 #main{
 position:relative;
 margin: 25px;
+left: 100px;
 }
 div#first{
 text-align: center;
@@ -205,8 +206,9 @@ Modal stuff taken from previous assignments, feel free to change/personalize
   /*
   Tutor photocard CSS
   */
-
+ 
   .post {
+    left: 100px;
     display: inline-block;
     vertical-align: top;
     height: 300px;
@@ -361,6 +363,8 @@ Home page CSS
  
 }
 
+
+
 #single-tutor-profile{
   position: fixed;
   left: 400px;
@@ -395,6 +399,12 @@ Home page CSS
   display: inline-flex;
 }
 
+
+
+#single-tutor-post{
+  position: fixed;
+  left: 0px;
+}
 #single-tutor-img img{
   max-height: 300px;
   max-width: 300px;
@@ -422,6 +432,7 @@ Home page CSS
   border-radius: 16px;
   height: 33%;
   background-color: #FEE0C6;
+  left: 0px;
 }
 
 /*tutors filter button*/
