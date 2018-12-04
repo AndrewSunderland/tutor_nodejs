@@ -80,7 +80,7 @@ exitButtonModal.addEventListener('click', handleExitClick);
 var photoContainer = document.getElementById('posts');
 
 function insertNewPost(event) {
-    if(photoUrlInput && profileInput && priceInput && subjectInput && nameInput && phoneInput){
+    if(photoUrlInput.value && profileInput.value && priceInput.value && subjectInput.value && nameInput.value && phoneInput.value){
     var context = {
       photoURL: photoUrlHolder,
       profile: profileTextHolder,
@@ -115,6 +115,7 @@ function insertNewPost(event) {
       name: nameInput.value,
       phone: phoneInput.value
     });
+    
     console.log("UPDATED allposts == " , allPosts);
     /**************************************/
 
