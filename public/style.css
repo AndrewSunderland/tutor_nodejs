@@ -206,7 +206,7 @@ Modal stuff taken from previous assignments, feel free to change/personalize
   /*
   Tutor photocard CSS
   */
- 
+
   .post {
     left: 100px;
     background-color: #FEE0C6;
@@ -217,7 +217,7 @@ Modal stuff taken from previous assignments, feel free to change/personalize
     margin: 10px;
     padding: 10px;
     border: 1px solid #a15858;
-    
+
     border: 2px solid #252525;
     border-radius: 3px;
   }
@@ -234,7 +234,7 @@ Modal stuff taken from previous assignments, feel free to change/personalize
     max-height: 240px;
     max-width: 300px;
     border: 1px solid black;
-    
+
   }
 
   .post-info-container {
@@ -367,21 +367,25 @@ Home page CSS
 }
 /*single profile page description so we can hide overflow on main page*/
 .post-profileV2{
- 
+
   left: 300px;
   width: 42%;
- 
+
+
 }
 
 
 
 #single-tutor-profile{
+  display: flex;
   position: fixed;
   left: 400px;
   top: 100px;
-  display: inline-block;
+  /*display: inline-block;*/
   width: 66%;
   overflow-wrap: break-word;
+  height: calc(100% - 100px);
+  overflow: auto;
 }
 
 #single-tutor-description-of{
@@ -414,6 +418,7 @@ Home page CSS
 #single-tutor-post{
   position: fixed;
   left: 0px;
+
 }
 #single-tutor-img img{
   max-height: 300px;
