@@ -15,17 +15,9 @@
                 <p>Recently Added Tutors</p>
             </h1>
             <div class="recent-tutors-list">
-                {{ recent-tutors }}
-            </div>
-        </div>
-    </div>
-    <div class="top-tutors">
-        <div class="top-tutors-container">
-            <h1 class="home-title">
-                <p>Top Rated Tutors</p>
-            </h1>
-            <div class="top-tutors-list">
-                {{ top-tutors }}
+                {{#each post}}
+                    {{>postTemplate}}
+                {{/each}}
             </div>
         </div>
     </div>
