@@ -22,7 +22,22 @@ app.use(express.static('public'));
 app.use(bodyParser.json());
 
 app.get('/', function (req, res) {
-   res.status(200).render('home');
+    var tutorArray = tutorData.slice();
+    tutorArray.reverse();
+
+    if (tutorArray.length >= 5){
+        var tutorArrNew = tutorArray.slice(0, 5);
+
+        res.status(200).render('home', {
+            post: tutorArrNew,
+            check: 0
+        });
+    } else {
+        res.status(200).render('home', {
+            post: tutorArray,
+            check: 0
+        });
+    }
 });
 
 app.get('/about', function (req, res) {
