@@ -216,8 +216,6 @@ Modal stuff taken from previous assignments, feel free to change/personalize
     width: 300px;
     margin: 10px;
     padding: 10px;
-    border: 1px solid #a15858;
-
     border: 2px solid #252525;
     border-radius: 3px;
   }
@@ -226,8 +224,8 @@ Modal stuff taken from previous assignments, feel free to change/personalize
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: 100%;
-    width: 100%;
+    height: 95%;
+    width: 95%;
   }
 
   .post-image-container img {
@@ -239,7 +237,7 @@ Modal stuff taken from previous assignments, feel free to change/personalize
 
   .post-info-container {
     width: 100%;
-    margin-top: 20px;
+    margin-top: 10px;
   }
 
   .post-price {
