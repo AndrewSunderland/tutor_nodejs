@@ -10,6 +10,6 @@ Instructions:
 1. Clone
 2. Open terminal/bash
 3. Type npm run start
-4. Go to browser and visit http://localhost/->whatever the port number is<-
+4. Go to browser and visit http://localhost/->whatever_the_port_number_is<-
 
 In the future we plan on moving away from JSON databasing and use something that allows us to scale.
