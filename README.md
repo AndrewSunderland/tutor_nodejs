@@ -8,8 +8,9 @@ In this project we used HTML, CSS, JS, and handlebars.
 Instructions:
 
 1. Clone
-2. Open terminal/bash
-3. Type npm run start
-4. Go to browser and visit http://localhost/whatever_the_port_number_is
+2. Open terminal
+3. npm install
+4. Type npm run start
+5. Go to browser and visit http://localhost/whatever_the_port_number_is
 
 In the future we plan on moving away from JSON databasing and use something that allows us to scale.
